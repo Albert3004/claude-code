@@ -1,0 +1,81 @@
+{
+  "$schema": "https://schemas.elgato.com/streamdeck/plugins/manifest.json",
+  "SDKVersion": 2,
+  "Name": "Claude Code Controls",
+  "Version": "1.0.0.0",
+  "Author": "Claude Code community",
+  "Description": "Steuere Claude Code vom Stream Deck MK2 aus: Aktiv-Status, Wochen-Nutzung in Prozent, Modellwahl (inkl. Fable 5), neuer Coding-Task und neuer Chat.",
+  "Category": "Claude Code",
+  "CategoryIcon": "imgs/category",
+  "Icon": "imgs/plugin",
+  "URL": "https://claude.com/claude-code",
+  "Nodejs": {
+    "Version": "20",
+    "Debug": "enabled"
+  },
+  "CodePath": "bin/plugin.js",
+  "Software": {
+    "MinimumVersion": "6.5"
+  },
+  "OS": [
+    { "Platform": "mac", "MinimumVersion": "12" },
+    { "Platform": "windows", "MinimumVersion": "10" }
+  ],
+  "Actions": [
+    {
+      "Name": "Claude Aktiv",
+      "UUID": "com.anthropic.claudecode.controls.status",
+      "Icon": "imgs/actions/status",
+      "Tooltip": "Zeigt an, ob eine Claude-Code-Session gerade laeuft.",
+      "Controllers": ["Keypad"],
+      "PropertyInspectorPath": "ui/status.html",
+      "States": [
+        { "Image": "imgs/actions/status", "TitleAlignment": "bottom", "ShowTitle": false }
+      ]
+    },
+    {
+      "Name": "Wochen-Nutzung",
+      "UUID": "com.anthropic.claudecode.controls.usage",
+      "Icon": "imgs/actions/usage",
+      "Tooltip": "Zeigt die Nutzung der laufenden Woche in Prozent des Budgets.",
+      "Controllers": ["Keypad"],
+      "PropertyInspectorPath": "ui/usage.html",
+      "States": [
+        { "Image": "imgs/actions/usage", "TitleAlignment": "bottom", "ShowTitle": false }
+      ]
+    },
+    {
+      "Name": "Modell waehlen",
+      "UUID": "com.anthropic.claudecode.controls.model",
+      "Icon": "imgs/actions/model",
+      "Tooltip": "Setzt das aktive Claude-Modell (Opus 4.8, Sonnet 5, Haiku 4.5, Fable 5).",
+      "Controllers": ["Keypad"],
+      "PropertyInspectorPath": "ui/model.html",
+      "States": [
+        { "Image": "imgs/actions/model", "TitleAlignment": "bottom", "ShowTitle": false }
+      ]
+    },
+    {
+      "Name": "Neuer Coding-Task",
+      "UUID": "com.anthropic.claudecode.controls.newtask",
+      "Icon": "imgs/actions/newtask",
+      "Tooltip": "Oeffnet ein Terminal und startet 'claude' im Projektordner.",
+      "Controllers": ["Keypad"],
+      "PropertyInspectorPath": "ui/newtask.html",
+      "States": [
+        { "Image": "imgs/actions/newtask", "TitleAlignment": "bottom", "ShowTitle": false }
+      ]
+    },
+    {
+      "Name": "Neuer Chat",
+      "UUID": "com.anthropic.claudecode.controls.newchat",
+      "Icon": "imgs/actions/newchat",
+      "Tooltip": "Startet einen neuen Chat (claude.ai/new oder eigener Befehl).",
+      "Controllers": ["Keypad"],
+      "PropertyInspectorPath": "ui/newchat.html",
+      "States": [
+        { "Image": "imgs/actions/newchat", "TitleAlignment": "bottom", "ShowTitle": false }
+      ]
+    }
+  ]
+}

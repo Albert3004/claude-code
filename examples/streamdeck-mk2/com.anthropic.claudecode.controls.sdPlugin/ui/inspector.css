@@ -1,0 +1,56 @@
+:root {
+  color-scheme: dark;
+  font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+}
+body {
+  margin: 0;
+  padding: 12px 14px;
+  background: #2d2d2d;
+  color: #d8d8d8;
+  font-size: 13px;
+}
+.item {
+  margin-bottom: 12px;
+}
+.item > label {
+  display: block;
+  margin-bottom: 4px;
+  color: #9a9a9a;
+  font-size: 12px;
+}
+input,
+select,
+textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 6px 8px;
+  border: 1px solid #4a4a4a;
+  border-radius: 5px;
+  background: #3d3d3d;
+  color: #eee;
+  font-size: 13px;
+  font-family: inherit;
+}
+textarea {
+  min-height: 52px;
+  resize: vertical;
+}
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #d97757;
+}
+.hint {
+  color: #8a8a8a;
+  font-size: 11px;
+  line-height: 1.4;
+  margin-top: 4px;
+}
+.note {
+  background: #363636;
+  border-left: 3px solid #d97757;
+  padding: 8px 10px;
+  border-radius: 4px;
+  line-height: 1.45;
+}

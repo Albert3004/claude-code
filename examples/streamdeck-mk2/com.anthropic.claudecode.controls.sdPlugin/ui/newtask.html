@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="inspector.css" />
+  </head>
+  <body>
+    <div class="item">
+      <label for="dir">Projektordner</label>
+      <input id="dir" type="text" data-setting="directory" placeholder="~ (Home)" />
+      <div class="hint">Ordner, in dem <code>claude</code> gestartet wird.</div>
+    </div>
+    <div class="item">
+      <label for="cmd">Befehl</label>
+      <input id="cmd" type="text" data-setting="command" data-default="claude" />
+      <div class="hint">Wird im Terminal ausgeführt, z. B. <code>claude</code> oder <code>claude --continue</code>.</div>
+    </div>
+    <div class="item">
+      <label for="tpl">Terminal-Vorlage (optional)</label>
+      <textarea id="tpl" data-setting="terminalTemplate" placeholder="Plattform-Standard"></textarea>
+      <div class="hint">
+        <code>{dir}</code> und <code>{cmd}</code> werden ersetzt. Leer lassen für
+        den Standard (macOS: Terminal.app, Windows: cmd, Linux: x-terminal-emulator).
+      </div>
+    </div>
+    <script src="inspector.js"></script>
+  </body>
+</html>
