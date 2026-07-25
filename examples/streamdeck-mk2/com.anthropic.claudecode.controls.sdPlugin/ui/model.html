@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="inspector.css" />
+  </head>
+  <body>
+    <div class="item">
+      <label for="preset">Modell</label>
+      <select id="preset" data-setting="modelId" data-default="claude-opus-4-8">
+        <option value="claude-opus-4-8">Opus 4.8</option>
+        <option value="claude-sonnet-5">Sonnet 5</option>
+        <option value="claude-haiku-4-5-20251001">Haiku 4.5</option>
+        <option value="claude-fable-5">Fable 5</option>
+      </select>
+      <div class="hint">
+        Beim Druck wird <code>model</code> in <code>~/.claude/settings.json</code>
+        gesetzt – gilt für die nächste Claude-Session.
+      </div>
+    </div>
+    <div class="item">
+      <label for="label">Beschriftung</label>
+      <input id="label" type="text" data-setting="label" placeholder="Opus 4.8" />
+    </div>
+    <div class="item">
+      <label for="cmd">Eigener Befehl (optional)</label>
+      <input id="cmd" type="text" data-setting="command" placeholder="claude config set -g model {model}" />
+      <div class="hint">
+        <code>{model}</code> wird durch die Modell-ID ersetzt. Leer lassen, um
+        direkt <code>settings.json</code> zu schreiben.
+      </div>
+    </div>
+    <script src="inspector.js"></script>
+    <script>
+      // Keep the button label in sync with the chosen preset.
+      var LABELS = {
+        "claude-opus-4-8": "Opus 4.8",
+        "claude-sonnet-5": "Sonnet 5",
+        "claude-haiku-4-5-20251001": "Haiku 4.5",
+        "claude-fable-5": "Fable 5",
+      };
+      SDPI.onReady = function () {
+        var preset = document.getElementById("preset");
+        var label = document.getElementById("label");
+        function syncLabel() {
+          if (LABELS[preset.value]) {
+            label.value = LABELS[preset.value];
+            SDPI.settings.label = label.value;
+            SDPI.save();
+          }
+        }
+        preset.addEventListener("change", syncLabel);
+        if (!SDPI.settings.label) syncLabel();
+      };
+    </script>
+  </body>
+</html>

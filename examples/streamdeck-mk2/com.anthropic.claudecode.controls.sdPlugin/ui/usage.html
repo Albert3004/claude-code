@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="inspector.css" />
+  </head>
+  <body>
+    <div class="item">
+      <label for="budget">Wochen-Budget (Tokens)</label>
+      <input id="budget" type="number" min="0" step="1000000" data-setting="weeklyBudget" data-default="400000000" />
+      <div class="hint">
+        Die Prozentanzeige ist Wochen-Verbrauch ÷ Budget. Passe das Budget an,
+        bis der Wert zu <code>/usage</code> in Claude Code passt.
+      </div>
+    </div>
+    <div class="item">
+      <label for="cmd">Eigener Befehl (optional)</label>
+      <input id="cmd" type="text" data-setting="usageCommand" placeholder="z. B. npx ccusage@latest --json | jq ..." />
+      <div class="hint">
+        Muss eine Zahl 0–100 auf stdout ausgeben. Leer lassen, um das mitgelieferte
+        <code>weekly-usage.mjs</code> zu verwenden.
+      </div>
+    </div>
+    <script src="inspector.js"></script>
+  </body>
+</html>

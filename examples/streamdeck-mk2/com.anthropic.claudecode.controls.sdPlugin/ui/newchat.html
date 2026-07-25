@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="inspector.css" />
+  </head>
+  <body>
+    <div class="item">
+      <label for="url">Chat-URL</label>
+      <input id="url" type="text" data-setting="url" data-default="https://claude.ai/new" />
+      <div class="hint">Wird im Standardbrowser geöffnet.</div>
+    </div>
+    <div class="item">
+      <label for="cmd">Eigener Befehl (optional)</label>
+      <input id="cmd" type="text" data-setting="command" placeholder="überschreibt die URL" />
+      <div class="hint">
+        Wird statt der URL ausgeführt, z. B. um ein Terminal mit einer neuen
+        Session zu öffnen. Leer lassen, um die URL zu öffnen.
+      </div>
+    </div>
+    <script src="inspector.js"></script>
+  </body>
+</html>
