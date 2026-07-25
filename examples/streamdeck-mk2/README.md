@@ -54,6 +54,21 @@ und Häkchen hervorgehoben.
 > einer Datei `Claude Code Controls.streamDeckPlugin` packen (der Ordnername
 > `…​.sdPlugin` muss die Wurzel im Archiv sein) und öffnen.
 
+## Fertiges Profil „Claude-Helper"
+
+Im Ordner `profile/` liegt eine importfertige Profildatei
+**`Claude-Helper.streamDeckProfile`** mit der oben gezeigten Belegung – jede
+Taste bereits vorkonfiguriert (Modelle, Budget, URL usw.).
+
+1. **Zuerst das Plugin installieren** (siehe oben) und die Stream-Deck-Software
+   neu starten – das Profil verweist auf die Plugin-Aktionen.
+2. **Doppelklick** auf `Claude-Helper.streamDeckProfile`. Die Elgato-Software
+   fragt, ob das Profil importiert werden soll → bestätigen.
+3. Das Profil erscheint oben in der Profil-Auswahl als **„Claude-Helper"**.
+
+> Das Profil ist für die **MK2** (`DeviceModel 20GAA9902`) gebaut. Neu erzeugen
+> lässt es sich jederzeit mit `node profile/build-profile.mjs`.
+
 ## Konfiguration
 
 Jede Taste hat einen Property Inspector (rechts im Editor):
